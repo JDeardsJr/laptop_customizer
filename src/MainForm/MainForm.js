@@ -1,17 +1,18 @@
 import React from 'react';
 import './MainForm.css';
 import Features from '../Features/Features';
+import FEATURES from '../FeaturesObject/FEATURES';
 
 class MainForm extends React.Component {
     render() {
-        const features = Object.keys(this.props.features).map((feature, idx) => {
+        const features = Object.keys(FEATURES).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
             return (
                 <Features
                     name={feature}
                     key={featureHash}
                     featureHash={featureHash}
-                    options={this.props.features[feature]}
+                    options={FEATURES[feature]}
                     selected={this.props.selected}
                     handleUpdateFeature={this.props.handleUpdateFeature}
                     usCurrencyFormat={this.props.usCurrencyFormat}
